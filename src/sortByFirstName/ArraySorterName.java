@@ -2,6 +2,7 @@ package sortByFirstName;
 import java.util.Comparator;
 import person.Person;
 
+
 import java.util.Collections;
 
 public class ArraySorterName implements Comparator<Person> {
