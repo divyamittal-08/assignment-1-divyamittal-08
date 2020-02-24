@@ -117,6 +117,20 @@ public class Main {
         contactList.add(p);
         top++;
     }
+    public void viewContacts(){
+        System.out.println("--------Here are all your contacts-------");
+        if(contactList.size() == 1){
+            for(int i=0; i<contactList.size(); i++){
+                System.out.println(contactList.get(i));
+            }
+        }
+        else {
+            Collections.sort(contactList, new ArraySorterName());
+            for (int i = 0; i < contactList.size(); i++){
+                System.out.println(contactList.get(i));
+            }
+        }
+    }
 
 
 }
