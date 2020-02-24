@@ -1,4 +1,11 @@
 package sortByFirstName;
+import java.util.Comparator;
+import person.Person;
 
-public class ArraySorterName {
+import java.util.Collections;
+
+public class ArraySorterName implements Comparator<Person> {
+    public int compare(Person p1, Person p2) {
+        return p1.getFName().compareToIgnoreCase(p2.getFName());
+    }
 }
