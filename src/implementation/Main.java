@@ -152,6 +152,18 @@ public class Main {
             }
         }
     }
+    public void deleteContact(Scanner sc){
+        int i = 1;
+        System.out.println("Here are all your contacts :");
+        for(Person dcontact : contactList){
+            System.out.println(i + ". " + dcontact.getFName() + " " + dcontact.getLName());
+            i++;
+        }
+        System.out.println("Press the number against the contact to delete it: ");
+        String d = sc.nextLine();
+        System.out.println(contactList.get(Integer.parseInt(d)-1).getFName() + " " + contactList.get(Integer.parseInt(d)-1).getLName() + " contact deleted from list !" );
+        contactList.remove(Integer.parseInt(d)-1);
+    }
 
 
 }
