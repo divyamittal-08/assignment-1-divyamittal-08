@@ -131,6 +131,27 @@ public class Main {
             }
         }
     }
+    public void searchContact(Scanner sc){
+        System.out.println("You could search for a contact from their first name. ");
+        String s = sc.nextLine();
+        int count = 0;
+        for(Person contact : contactList){
+            if(contact.getFName() != null && contact.getFName().contains(s)){
+                count++;
+            }
+        }
+        if(count > 0){
+            System.out.println(count + " match found ! ");
+        }
+        else{
+            System.out.println("NO RESULTS FOUND !");
+        }
+        for(Person contact : contactList){
+            if(contact.getFName() != null && contact.getFName().contains(s)){
+                System.out.println(contact);
+            }
+        }
+    }
 
 
 }
