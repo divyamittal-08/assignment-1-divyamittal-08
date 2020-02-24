@@ -3,6 +3,7 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
+
 public class Main {
     ArrayList<Person>  contactList = new ArrayList<>();
     public Main(){
@@ -52,6 +53,69 @@ public class Main {
         System.out.println("Press 5 to exit program");
         response = sc.nextLine();
         return response;
+    }
+    public void addANewContact(Scanner sc){
+        String fName;
+        String lName;
+        ArrayList<String> arr = new ArrayList<>();
+        String email = "";
+
+        System.out.println("You have chosen to add a new contact ");
+        System.out.println("Please enter the name of the person ");
+        System.out.println("First Name : ");
+        fName = sc.nextLine();
+        System.out.println("Last Name : ");
+        lName = sc.nextLine();
+        System.out.println("Contact Number : ");
+        String no = sc.nextLine();
+        arr.add(no);
+        String ch;
+        boolean x = false;
+        do{
+            ch = "";
+            System.out.println("Would you like to add another contact number? (y/n) : ");
+            ch = sc.nextLine();
+            switch(ch){
+                case "y":
+                    System.out.println("Contact Number : ");
+                    no = sc.nextLine();
+                    arr.add(no);
+                    x = true;
+                    break;
+                case "n":
+                    x = false;
+                    break;
+
+                default:
+                    System.out.println("Wrong choice");
+                    x = true;
+            }
+        }while(x == true);
+        String choice = "";
+        boolean y = false;
+        do{
+            System.out.println("Would you like to add email address? (y/n) : ");
+            choice = sc.nextLine();
+            switch (choice){
+                case "y":
+                    System.out.println("Email Address : ");
+                    email = sc.nextLine();
+                    y = false;
+                    break;
+                case "n":
+                    email = "None";
+                    y = false;
+                    break;
+                default:
+                    System.out.println("Wrong choice");
+                    y = true;
+                    break;
+            }
+        }while(y == true);
+        System.out.println("Contact added successfully");
+        Person p = new Person(fName,lName,arr,email);
+        contactList.add(p);
+        top++;
     }
 
 
