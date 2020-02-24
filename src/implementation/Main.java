@@ -2,7 +2,7 @@ package implementation;
 import java.util.*;
 import java.lang.*;
 import java.io.*;
-
+import person.Person;
 
 public class Main {
     ArrayList<Person>  contactList = new ArrayList<>();
