@@ -45,4 +45,12 @@ public class Person {
     public String getEmail() {
         return email;
     }
+    public String toString(){
+        if(arr.size() > 1){
+            return "-------- * -------- * -------- * --------"+ "\n" + "First Name : " + fName + "\n" + "Last Name : " + lName + "\n" + "Contact Number(s) : " + arr.toString().replace("[", "").replace("]","") + "\n" + "Email Address : " + email + "\n" + "-------- * -------- * -------- * --------";
+        }
+        else{
+            return "-------- * -------- * -------- * --------"+ "\n" + "First Name : " + fName + "\n" + "Last Name : " + lName + "\n" + "Contact Number : " + arr.toString().replace("[","").replace("]", "") + "\n" + "Email Address : " + email + "\n" + "-------- * -------- * -------- * --------";
+        }
+    }
 }
